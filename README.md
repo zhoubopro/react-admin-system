@@ -1,12 +1,51 @@
 # react-admin-system
 ## react后台管理系统-全家桶
-### 一、Git排除 `.idea` 文件
+### 核心库
+```
+|-- react: ^16.8.3
+|-- react-router-dom: ^4.3.1
+|-- antd: ^3.13.6
+|-- axios: ^0.18.0
+|-- less-loader: ^4.1.0
+```
+### 目录结构说明
+```
+|-- config           # webpack配置文件        
+|-- public           # 公共资源文件
+|    |-- index.html  # 静态页面模板
+|-- scripts          # 
+|-- src              #    
+|    |-- assets      # 静态资源
+|    |-- components  # 组件
+|    |-- config      # 配置文件
+|    |-- pages       # 页面
+|    |-- styles      # 样式
+|    |-- test        # 测试
+|    |-- utils       # 公共工具
+|    |-- App.js      # 
+|    |-- index.js    # 入口文件
+|-- .gitignore       # git不提交配置文件
+|-- package.json     # 包管理文件
+|-- README.md        # 说明文件
+|-- yarn.lock        # 
+|-- yarn-error.log   #    
+|-- .babelrc         # babel配置文件
+```
+### 一、git排除.idea文件
 
-##### 1. 在 `.gitignore` 文件中添加
-```git
+##### 1.在`.gitignore`文件中添加
+```
+# IntelliJ project files
+.idea/
+.idea
+*.iml
+out
+gen
+
 echo '.idea' >> .gitignore
 ```
-##### 2.将.gitignore文件上传到远程仓库
+
+##### 2.将`.gitignore`文件上传到远程仓库
 
 ```git
  git pull
