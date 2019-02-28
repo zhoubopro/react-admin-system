@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import './styles/reset.less';
+import './styles/reset.less';
 import { Button } from 'antd';
 
 class App extends Component {

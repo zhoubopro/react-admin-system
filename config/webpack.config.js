@@ -39,6 +39,9 @@ const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
+// @add less
+const lessRegex = /\.less$/;
+const lessModuleRegex = /\.module\.less$/;
 
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
@@ -105,9 +108,11 @@ module.exports = function(webpackEnv) {
     if (preProcessor) {
       loaders.push({
         loader: require.resolve(preProcessor),
-        options: {
-          sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,
-        },
+        // options: {
+        //   sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,
+        // },
+        // @edit options
+        options: cssOptions
       });
     }
     return loaders;
@@ -334,8 +339,9 @@ module.exports = function(webpackEnv) {
                 customize: require.resolve(
                   'babel-preset-react-app/webpack-overrides'
                 ),
-
                 plugins: [
+                  // @add antd 按需加载
+                  ['import', { libraryName: 'antd', style: true }],
                   [
                     require.resolve('babel-plugin-named-asset-import'),
                     {
@@ -451,6 +457,31 @@ module.exports = function(webpackEnv) {
                   getLocalIdent: getCSSModuleLocalIdent,
                 },
                 'sass-loader'
+              ),
+            },
+            // @add less
+            {
+              test: lessRegex,
+              exclude: lessModuleRegex,
+              use: getStyleLoaders({
+                importLoaders: 2,
+                modifyVars: {
+                  'primary-color': "#f9c700"
+                },
+                javascriptEnabled: true
+              }, 'less-loader'),
+            },
+            // Adds support for CSS Modules, but using SASS
+            // using the extension .module.scss or .module.sass
+            {
+              test: lessModuleRegex,
+              use: getStyleLoaders(
+                {
+                  importLoaders: 2,
+                  modules: true,
+                  getLocalIdent: getCSSModuleLocalIdent,
+                },
+                'less-loader'
               ),
             },
             // "file" loader makes sure those assets get served by WebpackDevServer.
