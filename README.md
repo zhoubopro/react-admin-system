@@ -6,14 +6,17 @@
 |-- react-router-dom: ^4.3.1
 |-- antd: ^3.13.6
 |-- axios: ^0.18.0
+|-- less: ^3.9.0
 |-- less-loader: ^4.1.0
+|-- babel-plugin-import: ^1.11.0
+|-- webpack: ^4.28.3
 ```
 ### 目录结构说明
 ```
 |-- config           # webpack配置文件        
 |-- public           # 公共资源文件
 |    |-- index.html  # 静态页面模板
-|-- scripts          # 
+|-- scripts          # 打包脚本
 |-- src              #    
 |    |-- assets      # 静态资源
 |    |-- components  # 组件

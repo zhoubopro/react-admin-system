@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import 'antd/dist/antd.less';
-import './App.css';
+// import './styles/reset.less';
+import { Button } from 'antd';
 
 class App extends Component {
 
@@ -9,6 +9,7 @@ class App extends Component {
       <div className="App">
         <span>hello</span>
         <span>world</span>
+        <Button className="primary">Button</Button>
       </div>
     );
   }
