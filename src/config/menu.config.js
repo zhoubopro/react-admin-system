@@ -1,49 +1,63 @@
 const menuList = [
   {
     title: '首页',
-    key: '/home'
+    key: '/home',
+    icons: 'home'
   },
   {
-    title: 'UI',
-    key: '/ui',
+    title: '工具',
+    key: '/tool',
+    icons: 'tool',
     children: [
       {
+        title: '小程序',
+        key: '/tool/smallProgram',
+        icons: 'smallProgram'
+      },
+      {
         title: '按钮',
-        key: '/ui/buttons',
+        key: '/tool/buttons',
       },
       {
         title: '弹框',
-        key: '/ui/modals',
+        key: '/tool/modals',
       },
       {
         title: 'Loading',
-        key: '/ui/loadings',
+        key: '/tool/loadings',
+        icons: 'sync',
+        spin: 'true',
       },
       {
         title: '通知提醒',
-        key: '/ui/notice',
+        key: '/tool/notice',
+        icons: 'sound'
       },
       {
         title: '全局Message',
-        key: '/ui/messages',
+        key: '/tool/messages',
+        icons: 'message'
       },
       {
         title: 'Tab页签',
-        key: '/ui/tabs',
+        key: '/tool/tabs',
+        icons: 'tag',
       },
       {
         title: '图片画廊',
-        key: '/ui/gallery',
+        key: '/tool/gallery',
+        icons: 'img',
       },
       {
         title: '轮播图',
-        key: '/ui/carousel',
+        key: '/tool/carousel',
       }
     ]
   },
   {
     title: '表单',
     key: '/form',
+    icons: 'form',
     children: [
       {
         title: '登录',
@@ -58,6 +72,7 @@ const menuList = [
   {
     title: '表格',
     key: '/table',
+    icons: 'table',
     children: [
       {
         title: '基础表格',

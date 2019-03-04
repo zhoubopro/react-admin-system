@@ -28,16 +28,19 @@ class NavLeft extends React.Component {
     return data.map((item) => {
       if (item.children) {
         return (
-          <SubMenu title={item.title} key={item.key}>
+          <SubMenu
+            key={item.key}
+            title={<span><Icon type={item.icons ? item.icons : 'null'}/>{item.title}</span>}
+          >
             {this.renderMenu(item.children)}
           </SubMenu>
         )
       }
       return <Menu.Item title={item.title} key={item.key}>
-        <NavLink to={item.key}>{item.title}</NavLink>
+        <NavLink to={item.key}><Icon type={item.icons ? item.icons : 'null'} spin={item.spin}/>{item.title}</NavLink>
       </Menu.Item>
     })
-  }
+  };
 
   render() {
     return (

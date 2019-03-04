@@ -47,8 +47,8 @@ class Header extends React.Component {
       <div className="header">
         <Row className="header-top">
           <Col span={6} className="logo">
-            <img src="/assets/logo-ant.svg" alt=""/>
-            <span>IMooc 通用管理系统</span>
+            {/*<img src="/assets/logo-ant.svg" alt=""/>*/}
+            {/*<span>IMooc 通用管理系统</span>*/}
           </Col>
           <Col span={18} className="weather">
             <span className="date">{this.state.systemTime}</span>
