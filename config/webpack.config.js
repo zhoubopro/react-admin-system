@@ -466,7 +466,7 @@ module.exports = function(webpackEnv) {
               use: getStyleLoaders({
                 importLoaders: 2,
                 modifyVars: {
-                  'primary-color': "#f9c700"
+                  // 'primary-color': "#f9c700"
                 },
                 javascriptEnabled: true
               }, 'less-loader'),
