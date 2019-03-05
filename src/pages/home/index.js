@@ -7,7 +7,9 @@ class Home extends Component {
   render() {
     return (
       <Row className="home-wrap">
-        home 首页
+        <Col>
+          home 首页
+        </Col>
       </Row>
     );
   }

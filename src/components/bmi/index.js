@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon, Form, Card, Input, Button, message } from 'antd';
+import { Icon, Form, Card, Input, Button } from 'antd';
 import './index.less';
 
 const FormItem = Form.Item;
@@ -20,7 +20,7 @@ class Bmi extends Component {
     // console.log('form', this.props.form.getFieldsValue());
     this.props.form.validateFields((err, values) => {
       if (err) {
-      //   message.error('请输入体重和身高再进行计算!');
+        //   message.error('请输入体重和身高再进行计算!');
         return
       }
       let w = this.props.form.getFieldsValue().weight;
@@ -81,7 +81,7 @@ class Bmi extends Component {
     };
 
     return (
-      <div className='bmi-warp'>
+      <div className='bmi-wrap'>
         <Form onSubmit={this.handleSubmit}>
           <FormItem label='您的体重' {...formItemLayout}>
             {getFieldDecorator('weight', {
@@ -89,7 +89,7 @@ class Bmi extends Component {
                 required: true, message: '请填写您的体重'
               }],
             })(
-              <Input placeholder="您的体重/kg" addonBefore={<Icon type="flag" />}/>
+              <Input placeholder="您的体重/kg" addonBefore={<Icon type="flag"/>}/>
             )}
           </FormItem>
           <FormItem label='您的身高' {...formItemLayout}>
@@ -107,7 +107,7 @@ class Bmi extends Component {
               value: this.state.bmi ? this.state.bmi : 0,
               initialValue: this.state.bmi
             })(
-              <Input placeholder="BMI" disabled addonBefore={<Icon type="notification" />}/>
+              <Input placeholder="BMI" disabled addonBefore={<Icon type="notification"/>}/>
             )}
           </FormItem>
           <FormItem

@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import axios from '../../utils/axios';
 import Util from '../../utils/utils';
+import { Link } from 'react-router-dom';
 import './index.less';
 
 class Header extends React.Component {
@@ -17,7 +18,6 @@ class Header extends React.Component {
   }
 
   componentWillMount() {
-    let systemTime = Util.formateDate(new Date().getTime());
     setInterval(() => {
       let systemTime = Util.formateDate(new Date().getTime());
       this.setState({
@@ -59,7 +59,7 @@ class Header extends React.Component {
               {this.state.weather}
             </span>
             <span> 欢迎，{this.state.userName}</span>
-            <a href="#">退出</a>
+            <Link to="/login">退出</Link>
           </Col>
         </Row>
       </div>
