@@ -10,6 +10,10 @@ class Breadcrumbs extends React.Component {
   //   super(props);
   // }
 
+  componentDidMount() {
+    console.log(this.props);
+  }
+
   render() {
     return (
       <Breadcrumb className="breadcrumb">

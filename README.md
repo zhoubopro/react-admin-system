@@ -1,6 +1,8 @@
 # react-admin-system
 ## react后台管理系统-全家桶
-### 核心库
+
+
+### 核心库及版本
 ```
 |-- react: ^16.8.3
 |-- react-router-dom: ^4.3.1

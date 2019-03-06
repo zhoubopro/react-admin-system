@@ -5,6 +5,7 @@ import Login from '../pages/login/index';
 import Admin from '../pages/admin/index';
 import Home from "../pages/home";
 import SmallProgram from "../pages/tool/smallProgram";
+import Buttons from "../pages/tool/buttons";
 
 export default class Routes extends Component {
   render() {
@@ -18,6 +19,7 @@ export default class Routes extends Component {
                 <Switch>
                   <Route path='/home' component={Home}/>
                   <Route path='/tool/smallProgram' component={SmallProgram}/>
+                  <Route path='/tool/buttons' component={Buttons}/>
                   <Redirect to="/home"/>
                 </Switch>
               </Admin>
