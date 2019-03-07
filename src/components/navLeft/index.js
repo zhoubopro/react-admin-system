@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu, Switch, Icon } from 'antd';
 import { NavLink } from 'react-router-dom';
 import MenuConfig from './../../config/menu.config';
 import './index.less';
@@ -13,6 +13,8 @@ class NavLeft extends React.Component {
     super(props);
     this.state = {
       menuTreeNode: [],
+      theme: 'dark',
+      mode: 'inline'
     }
   }
 
@@ -43,9 +45,22 @@ class NavLeft extends React.Component {
     })
   };
 
+  changeTheme = value => {
+    this.setState({
+      theme: value ? 'dark' : 'light',
+    })
+  };
+
+  changeMode = value => {
+    this.setState({
+      mode: value ? 'inline' : 'vertical',
+    })
+  }
+
   render() {
     return (
       <Sider
+        theme={this.state.theme}
         className="nav-left"
         trigger={null}
         breakpoint="lg"
@@ -53,12 +68,26 @@ class NavLeft extends React.Component {
       >
         <div className="logo">
           <img src="/assets/logo-ant.svg" alt="antd-logo"/>
-          <h1> 管理系统 </h1>
+          <h1>🌼管理系统🍄</h1>
+        </div>
+        <div className="theme-switch">
+          <Switch
+            checked={this.state.theme === 'dark'}
+            onChange={this.changeTheme}
+            checkedChildren="Dark"
+            unCheckedChildren="Light"
+          />
+          <Switch
+            checked={this.state.mode === 'inline'}
+            onChange={this.changeMode}
+            checkedChildren="inline"
+            unCheckedChildren="vertical"
+          />
         </div>
         <Menu
+          theme={this.state.theme}
           onClick={this.handleClick}
-          theme="dark"
-          mode="inline"
+          mode={this.state.mode}
           // selectedKeys={this.state.selectedKey}
           // openKeys={this.state.firstHide ? null : [this.state.openKey]}
           // onOpenChange={this.openMenu}
