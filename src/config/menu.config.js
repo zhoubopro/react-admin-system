@@ -15,35 +15,6 @@ const menuList = [
         icons: 'smallProgram'
       },
       {
-        title: '按钮',
-        key: '/tool/buttons',
-      },
-      {
-        title: '弹框',
-        key: '/tool/modals',
-      },
-      {
-        title: 'Loading',
-        key: '/tool/loadings',
-        icons: 'sync',
-        spin: 'true',
-      },
-      {
-        title: '通知提醒',
-        key: '/tool/notice',
-        icons: 'sound'
-      },
-      {
-        title: '全局Message',
-        key: '/tool/messages',
-        icons: 'message'
-      },
-      {
-        title: 'Tab页签',
-        key: '/tool/tabs',
-        icons: 'tag',
-      },
-      {
         title: '图片画廊',
         key: '/tool/gallery',
         icons: 'img',
@@ -51,7 +22,44 @@ const menuList = [
       {
         title: '轮播图',
         key: '/tool/carousel',
+        icons: 'loop'
       }
+    ]
+  },
+  {
+    title: 'ant.design',
+    key: 'antd',
+    icons: 'alibaba',
+    children: [
+      {
+        title: '按钮',
+        key: '/antd/buttons',
+      },
+      {
+        title: '弹框',
+        key: '/antd/modals',
+      },
+      {
+        title: 'Loading',
+        key: '/antd/loadings',
+        icons: 'sync',
+        spin: 'true',
+      },
+      {
+        title: '通知提醒',
+        key: '/antd/notice',
+        icons: 'sound'
+      },
+      {
+        title: '全局Message',
+        key: '/antd/messages',
+        icons: 'message'
+      },
+      {
+        title: 'Tab页签',
+        key: '/antd/tabs',
+        icons: 'tag',
+      },
     ]
   },
   {

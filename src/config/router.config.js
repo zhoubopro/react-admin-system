@@ -4,8 +4,19 @@ import App from '../App';
 import Login from '../pages/login/index';
 import Admin from '../pages/admin/index';
 import Home from "../pages/home";
+
+// tool
 import SmallProgram from "../pages/tool/smallProgram";
-import Buttons from "../pages/tool/buttons";
+import Carousel from "../pages/tool/carousel";
+import Gallery from "../pages/tool/gallery";
+
+// antd
+import Buttons from "../pages/antd/buttons";
+import Modals from "../pages/antd/modals";
+import Loadings from "../pages/antd/loadings";
+import Notice from "../pages/antd/notice";
+import Messages from "../pages/antd/messages";
+import Tabs from "../pages/antd/tabs";
 
 export default class Routes extends Component {
   render() {
@@ -18,8 +29,18 @@ export default class Routes extends Component {
               <Admin>
                 <Switch>
                   <Route path='/home' component={Home}/>
+
                   <Route path='/tool/smallProgram' component={SmallProgram}/>
-                  <Route path='/tool/buttons' component={Buttons}/>
+                  <Route path='/tool/carousel' component={Carousel}/>
+                  <Route path='/tool/gallery' component={Gallery}/>
+
+                  <Route path='/antd/buttons' component={Buttons}/>
+                  <Route path='/antd/modals' component={Modals}/>
+                  <Route path='/antd/loadings' component={Loadings}/>
+                  <Route path='/antd/notice' component={Notice}/>
+                  <Route path='/antd/messages' component={Messages}/>
+                  <Route path='/antd/tabs' component={Tabs}/>
+
                   <Redirect to="/home"/>
                 </Switch>
               </Admin>
