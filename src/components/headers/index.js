@@ -1,23 +1,26 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import axios from '../../utils/axios';
-import Util from '../../utils/utils';
+//头部布局
+import React from 'react'
+import { Layout } from 'antd'
 import { Link } from 'react-router-dom';
+import Util from "../../utils/utils";
+import axios from "../../utils/axios";
 import './index.less';
 
-class Header extends React.Component {
+const { Header } = Layout;
 
+class Headers extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userName: '北方的🐺',
+      userName: ' 🐺 Lebron',
       systemTime: '',
       dayPictureUrl: '',
-      weather: ''
+      weather: '',
     }
   }
 
   componentWillMount() {
+    let systemTime = Util.formateDate(new Date().getTime());
     setInterval(() => {
       let systemTime = Util.formateDate(new Date().getTime());
       this.setState({
@@ -44,13 +47,13 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className="header">
-        <Row className="header-top">
-          <Col span={6} className="logo">
+      <Header className="header-wrap">
+        <div className="header-top">
+          {/*<div className="logo">*/}
             {/*<img src="/assets/logo-ant.svg" alt=""/>*/}
             {/*<span>IMooc 通用管理系统</span>*/}
-          </Col>
-          <Col span={18} className="weather">
+          {/*</div>*/}
+          <div className="weather">
             <span className="date">{this.state.systemTime}</span>
             <span className="weather-img">
               <img src={this.state.dayPictureUrl} alt=""/>
@@ -60,11 +63,11 @@ class Header extends React.Component {
             </span>
             <span> 欢迎，{this.state.userName}</span>
             <Link to="/login">退出</Link>
-          </Col>
-        </Row>
-      </div>
-    );
+          </div>
+        </div>
+      </Header>
+    )
   }
 }
 
-export default Header;
+export default Headers;

@@ -28,7 +28,7 @@
 |    |-- test        # 测试
 |    |-- utils       # 公共工具
 |    |-- App.js      # 
-|    |-- index.js    # 入口文件
+|    |-- index.back.js    # 入口文件
 |-- .gitignore       # git不提交配置文件
 |-- package.json     # 包管理文件
 |-- README.md        # 说明文件

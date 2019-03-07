@@ -1,28 +1,27 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'antd';
-import Header from '../../components/header';
+import { Layout } from 'antd';
+import Headers from '../../components/headers';
+import Footers from '../../components/footers';
+import NavLeft from '../../components/navLeft/index';
 import Breadcrumbs from '../../components/breadcrumbs';
-import Footer from '../../components/footer';
-import NavLeft from '../../components/navLeft';
 import '../../styles/common.less';
-
+import './index.less';
+const { Content } = Layout;
 class Admin extends Component {
 
   render() {
     return (
-      <Row className="container">
-        <Col span={4} className="nav-left">
-          <NavLeft/>
-        </Col>
-        <Col span={20} className="main">
-          <Header/>
-          <Breadcrumbs />
-          <Row className="content">
+      <Layout style={{ height: '100%' }}>
+        <NavLeft/>
+        <Layout>
+          <Headers/>
+          <Breadcrumbs/>
+          <Content className="content-wrap">
             {this.props.children}
-          </Row>
-          <Footer/>
-        </Col>
-      </Row>
+          </Content>
+          <Footers/>
+        </Layout>
+      </Layout>
     );
   }
 }

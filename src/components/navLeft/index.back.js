@@ -1,10 +1,9 @@
 import React from 'react';
-import { Layout, Menu, Icon } from 'antd';
+import { Menu, Icon } from 'antd';
 import { NavLink } from 'react-router-dom';
 import MenuConfig from './../../config/menu.config';
 import './index.less';
 
-const { Sider } = Layout;
 const SubMenu = Menu.SubMenu;
 
 class NavLeft extends React.Component {
@@ -12,7 +11,7 @@ class NavLeft extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      menuTreeNode: [],
+      menuTreeNode: []
     }
   }
 
@@ -45,27 +44,18 @@ class NavLeft extends React.Component {
 
   render() {
     return (
-      <Sider
-        className="nav-left"
-        trigger={null}
-        breakpoint="lg"
-        style={{ overflowY: 'auto' }}
-      >
+      <div className="nav-left">
         <div className="logo">
           <img src="/assets/logo-ant.svg" alt="antd-logo"/>
-          <h1> 管理系统 </h1>
+          <h1>github website</h1>
         </div>
         <Menu
           onClick={this.handleClick}
           theme="dark"
-          mode="inline"
-          // selectedKeys={this.state.selectedKey}
-          // openKeys={this.state.firstHide ? null : [this.state.openKey]}
-          // onOpenChange={this.openMenu}
         >
           {this.state.menuTreeNode}
         </Menu>
-      </Sider>
+      </div>
     );
   }
 }
