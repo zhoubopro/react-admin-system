@@ -55,7 +55,7 @@ class NavLeft extends React.Component {
     this.setState({
       mode: value ? 'inline' : 'vertical',
     })
-  }
+  };
 
   render() {
     return (
@@ -68,7 +68,7 @@ class NavLeft extends React.Component {
       >
         <div className="logo">
           <img src="/assets/logo-ant.svg" alt="antd-logo"/>
-          <h1>🌼管理系统🍄</h1>
+          <h1>管理系统</h1>
         </div>
         <div className="theme-switch">
           <Switch
@@ -88,9 +88,6 @@ class NavLeft extends React.Component {
           theme={this.state.theme}
           onClick={this.handleClick}
           mode={this.state.mode}
-          // selectedKeys={this.state.selectedKey}
-          // openKeys={this.state.firstHide ? null : [this.state.openKey]}
-          // onOpenChange={this.openMenu}
         >
           {this.state.menuTreeNode}
         </Menu>

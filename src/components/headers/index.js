@@ -20,7 +20,6 @@ class Headers extends React.Component {
   }
 
   componentWillMount() {
-    let systemTime = Util.formateDate(new Date().getTime());
     setInterval(() => {
       let systemTime = Util.formateDate(new Date().getTime());
       this.setState({
