@@ -144,5 +144,10 @@ const menuList = [
     title: '权限设置',
     key: '/permission'
   },
+  {
+    title: '友情链接',
+    key: '/link',
+    icons: 'user'
+  }
 ];
 export default menuList;

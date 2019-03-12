@@ -18,6 +18,8 @@ import Notice from "../pages/antd/notice";
 import Messages from "../pages/antd/messages";
 import Tabs from "../pages/antd/tabs";
 
+import Order from "../pages/order/index";
+
 export default class Routes extends Component {
   render() {
     return (
@@ -25,6 +27,7 @@ export default class Routes extends Component {
         <App>
           <Switch>
             <Route path='/login' component={Login}/>
+
             <Route path='/' render={() =>
               <Admin>
                 <Switch>
@@ -41,10 +44,13 @@ export default class Routes extends Component {
                   <Route path='/antd/messages' component={Messages}/>
                   <Route path='/antd/tabs' component={Tabs}/>
 
+                  <Route path='/order' component={Order}/>
+
                   <Redirect to="/home"/>
                 </Switch>
               </Admin>
             }/>
+
           </Switch>
         </App>
       </HashRouter>
