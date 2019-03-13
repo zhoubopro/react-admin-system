@@ -93,6 +93,10 @@ const menuList = [
     ]
   },
   {
+    title: '排序与算法',
+    key: '/algorithm'
+  },
+  {
     title: '富文本',
     key: '/rich'
   },

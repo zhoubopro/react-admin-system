@@ -20,6 +20,8 @@ import Tabs from "../pages/antd/tabs";
 
 import Order from "../pages/order/index";
 
+import Algorithm from "../pages/algorithm";
+
 export default class Routes extends Component {
   render() {
     return (
@@ -45,6 +47,8 @@ export default class Routes extends Component {
                   <Route path='/antd/tabs' component={Tabs}/>
 
                   <Route path='/order' component={Order}/>
+
+                  <Route path='/algorithm' component={Algorithm}/>
 
                   <Redirect to="/home"/>
                 </Switch>
