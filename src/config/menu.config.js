@@ -5,6 +5,11 @@ const menuList = [
     icons: 'home'
   },
   {
+    title: "通讯录",
+    key: "/contacts",
+    icons: "user"
+  },
+  {
     title: '工具',
     key: '/tool',
     icons: 'tool',

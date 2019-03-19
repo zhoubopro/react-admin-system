@@ -1,0 +1,25 @@
+{
+"code": "0",
+"result": {
+"contacts": [
+  {
+    "id": "ryan",
+    "name": "Ryan Florence",
+    "email": "ryan@reacttraining.com",
+    "avatarURL": "/gallery/1.png"
+  },
+  {
+    "id": "michael",
+    "name": "Michael Jackson",
+    "email": "michael@reacttraining.com",
+    "avatarURL": "/gallery/8.png"
+  },
+  {
+    "id": "tyler",
+    "name": "Tyler McGinnis",
+    "email": "tyler@reacttraining.com",
+    "avatarURL": "/gallery/5.png"
+  }
+]
+}
+}

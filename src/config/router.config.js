@@ -3,7 +3,10 @@ import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import App from '../App';
 import Login from '../pages/login/index';
 import Admin from '../pages/admin/index';
-import Home from "../pages/home";
+import Home from '../pages/home';
+
+import Contacts from '../pages/contacts';
+import CreateContact from '../pages/contacts/createContact';
 
 // tool
 import SmallProgram from "../pages/tool/smallProgram";
@@ -34,6 +37,12 @@ export default class Routes extends Component {
               <Admin>
                 <Switch>
                   <Route path='/home' component={Home}/>
+                  <Route path='/contacts' render={()=>(
+                    <Switch>
+                      <Route path='/' component={Contacts}/>
+                      <Route path='/create' component={CreateContact}/>
+                    </Switch>
+                  )}/>
 
                   <Route path='/tool/smallProgram' component={SmallProgram}/>
                   <Route path='/tool/carousel' component={Carousel}/>
@@ -50,7 +59,7 @@ export default class Routes extends Component {
 
                   <Route path='/algorithm' component={Algorithm}/>
 
-                  <Redirect to="/home"/>
+                  {/*<Redirect to="/home"/>*/}
                 </Switch>
               </Admin>
             }/>
