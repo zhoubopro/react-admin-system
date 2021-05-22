@@ -12,6 +12,7 @@ import CreateContact from '../pages/contacts/createContact';
 import SmallProgram from "../pages/tool/smallProgram";
 import Carousel from "../pages/tool/carousel";
 import Gallery from "../pages/tool/gallery";
+import WebGL from "../pages/tool/webgl";
 
 // antd
 import Buttons from "../pages/antd/buttons";
@@ -25,6 +26,8 @@ import Order from "../pages/order/index";
 
 import Algorithm from "../pages/algorithm";
 
+import Error from '../pages/error';
+
 export default class Routes extends Component {
   render() {
     return (
@@ -32,12 +35,11 @@ export default class Routes extends Component {
         <App>
           <Switch>
             <Route path='/login' component={Login}/>
-
-            <Route path='/' render={() =>
+            <Route path='/' render={props =>
               <Admin>
                 <Switch>
                   <Route path='/home' component={Home}/>
-                  <Route path='/contacts' render={()=>(
+                  <Route path='/contacts' render={() => (
                     <Switch>
                       <Route path='/' component={Contacts}/>
                       <Route path='/create' component={CreateContact}/>
@@ -47,6 +49,7 @@ export default class Routes extends Component {
                   <Route path='/tool/smallProgram' component={SmallProgram}/>
                   <Route path='/tool/carousel' component={Carousel}/>
                   <Route path='/tool/gallery' component={Gallery}/>
+                  <Route path='/tool/webgl' component={WebGL}/>
 
                   <Route path='/antd/buttons' component={Buttons}/>
                   <Route path='/antd/modals' component={Modals}/>
@@ -58,6 +61,8 @@ export default class Routes extends Component {
                   <Route path='/order' component={Order}/>
 
                   <Route path='/algorithm' component={Algorithm}/>
+
+                  <Route component={Error}/>
 
                   {/*<Redirect to="/home"/>*/}
                 </Switch>

@@ -28,6 +28,10 @@ const menuList = [
         title: '轮播图',
         key: '/tool/carousel',
         icons: 'loop'
+      },{
+        title: 'WebGL',
+        key: '/tool/webgl',
+        icons: 'loop'
       }
     ]
   },

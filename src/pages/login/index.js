@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Input, Button, notification, Icon } from 'antd';
 // import { Link } from 'react-router-dom';
+import Utils from '../../utils/utils';
 import './index.less'
 
 const FormItem = Form.Item;
@@ -10,7 +11,7 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-
+    Utils.removeStorage('userInfo');
   }
 
   componentDidMount() {
@@ -25,6 +26,7 @@ class Login extends Component {
     let password = getFieldsValue().password;
     if (username === 'admin' && password === '123456') {
       // 表单的路由处理
+      Utils.setStorage('userInfo', {username, password});
       this.props.history.push('/home');
     }
     else {
